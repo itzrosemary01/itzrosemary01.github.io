@@ -7,20 +7,20 @@
 <title>Rosemary Effiong, Design</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 /* Sister site to the marketing portfolio: same type and rose accent, neutral paper tones so the screens carry the colour.
    Long page designs sit in scrollable frames, so a reviewer scrolls the real page instead of squinting at a thumbnail. */
 :root{
-  --bg:#f4f2ee; --panel:#e9e6df; --ink:#1d1c1a; --muted:#5f5b54; --line:#d3cec4; --rose:#a8524e; --rose-soft:#efdcd8;
-  --display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
-  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono:"IBM Plex Mono", ui-monospace, "Consolas", monospace;
+  --bg:#efeee9; --panel:#e3e1da; --ink:#121212; --muted:#5c5a55; --line:#cfccc2; --rose:#3b3bd6; --rose-soft:#dcdcf7;
+  --display:"Fraunces", Georgia, "Times New Roman", serif;
+  --body:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, "Consolas", monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#1a1918; --panel:#252321; --ink:#ebe7e0; --muted:#aaa49a; --line:#3a3733; --rose:#e3a29c; --rose-soft:#46302d; color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#1a1918; --panel:#252321; --ink:#ebe7e0; --muted:#aaa49a; --line:#3a3733; --rose:#e3a29c; --rose-soft:#46302d; color-scheme:dark}
+  --bg:#0e0e10; --panel:#19191d; --ink:#f0eee8; --muted:#a3a19b; --line:#2c2c31; --rose:#a5a3ff; --rose-soft:#26254a; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0e10; --panel:#19191d; --ink:#f0eee8; --muted:#a3a19b; --line:#2c2c31; --rose:#a5a3ff; --rose-soft:#26254a; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);margin:0}
@@ -87,6 +87,22 @@ figcaption b{color:var(--ink);font-weight:500}
 footer{padding-block:52px 64px;display:grid;gap:14px}
 footer h2{font-size:clamp(28px,5vw,40px)}
 @media (prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-2px)}}
+
+/* v2 look (2026-11-23): editorial serif, indigo accent, numbered project list. Deliberately unlike the marketing site. */
+h1{font-weight:400;font-style:italic;font-size:clamp(52px,10vw,112px);line-height:.92;letter-spacing:-.02em}
+.thesis{font-family:var(--display);font-weight:400;font-size:clamp(22px,3.2vw,30px);max-width:28ch}
+.thesis em{font-style:italic}
+.case-head h2{font-weight:400;font-size:clamp(40px,7vw,72px);line-height:1}
+.case-head .sub{font-family:var(--body);font-weight:500;font-size:18px}
+.decision h3{font-weight:600;font-size:24px}
+footer h2{font-weight:400;font-style:italic}
+.btn{border-radius:999px}
+.cards{grid-template-columns:1fr;gap:0;border-bottom:1px solid var(--line)}
+.card{background:none;border-radius:0;border-top:1px solid var(--line);padding:18px 4px;grid-template-columns:minmax(110px,170px) minmax(0,1fr) auto;align-items:baseline;gap:4px 20px}
+.card b{font:400 clamp(28px,5vw,46px)/1.05 var(--display)}
+.card:hover{outline:0;background:var(--panel)}
+@media (max-width:640px){.card{grid-template-columns:1fr}}
+.tag{background:none;border:1px solid var(--rose);padding:3px 10px}
 </style>
 </head>
 <body>
@@ -118,7 +134,8 @@ footer h2{font-size:clamp(28px,5vw,40px)}
     <a class="card" href="#aurum"><span class="n">02 · Personal project</span><b>Aurum</b><span>Menswear store: web and iOS app</span></a>
     <a class="card" href="#finnova"><span class="n">03 · Personal project</span><b>Finnova</b><span>Fintech website and app onboarding</span></a>
     <a class="card" href="#milkshake"><span class="n">04 · Prototype</span><b>Milkshake</b><span>Animated flavour menu</span></a>
-    <a class="card" href="#muse"><span class="n">05 · Brand design</span><b>Muse Closet</b><span>Instagram carousels</span></a>
+    <a class="card" href="#juice"><span class="n">05 · Concept</span><b>Natural Juice</b><span>Hero screen for a juice brand</span></a>
+    <a class="card" href="#muse"><span class="n">06 · Brand design</span><b>Muse Closet</b><span>Instagram carousels</span></a>
   </div>
 </nav>
 
@@ -400,6 +417,39 @@ footer h2{font-size:clamp(28px,5vw,40px)}
       <li>Make each hero match its flavour, with a switcher for all four.</li>
       <li>Bigger, clearer "View more" buttons on the darker panels.</li>
       <li>A mobile version, where the side-by-side menu becomes a stack you tap through.</li>
+    </ul>
+  </div>
+</article>
+
+<!-- NATURAL JUICE -->
+<article class="case" id="juice" aria-labelledby="h-juice">
+  <div class="case-head">
+    <span class="tag">Concept · Desktop web</span>
+    <h2 id="h-juice">Natural Juice</h2>
+    <p class="sub">The first screen of a juice brand's website, from my own idea with no brief: one product, one message, one button.</p>
+    <div class="meta">
+      <span><b>Role</b> Solo UI design</span>
+      <span><b>Tool</b> Figma</span>
+      <span><b>Type</b> Personal concept, one hero screen</span>
+    </div>
+  </div>
+  <figure><img src="img/nj-hero.jpg" alt="Natural Juice landing page: a large two-line headline, short copy and a Read More button on the left, an orange juice bottle tilted across the page in a splash of juice" loading="lazy"><figcaption><b>Hero screen</b> · desktop</figcaption></figure>
+  <div class="story">
+    <div><h3 class="k">The idea</h3><p>A juice is bought on appetite. The first screen should make you thirsty before you read anything, so the bottle gets the whole page and everything else stays out of its way.</p></div>
+    <div><h3 class="k">What I designed</h3>
+      <ul>
+        <li><b>Movement:</b> the bottle is tilted across the page with the splash bursting behind it, so a still screen feels like it's pouring.</li>
+        <li><b>Colour from the product:</b> a soft cream-yellow background and an orange button, all from the juice itself.</li>
+        <li><b>Hierarchy:</b> a two-line name you can read from across the room, three short lines of copy, one button. The nav is three words and a login.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="next">
+    <h3 class="k">What I'd do next</h3>
+    <ul>
+      <li>A real logo on the bottle, so the brand isn't a placeholder.</li>
+      <li>The product page and a two-step order flow: pick a flavour and size, then pay.</li>
+      <li>A mobile version, with the bottle above the headline.</li>
     </ul>
   </div>
 </article>
