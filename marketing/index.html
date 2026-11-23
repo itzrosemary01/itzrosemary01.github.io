@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Rosemary Effiong, marketing strategist in Lagos: case studies with the screenshots behind every number.">
+<title>Rosemary Effiong</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column of case files. Each case = claim, then the receipts (real screenshots) that prove it.
+   Olive and sage come from Rose's own portfolio; dusty rose is the single accent, used for numbers that matter. */
+:root{
+  --bg:#f1f2ea; --panel:#e4e7d8; --ink:#1f2619; --muted:#5a6150; --line:#c9cdb8; --rose:#a8524e; --rose-soft:#ecd6d1;
+  --display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "Consolas", monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#232a1e; --panel:#2d3526; --ink:#e3e5d3; --muted:#a9ae96; --line:#3e4835; --rose:#e3a29c; --rose-soft:#4a3532; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#232a1e; --panel:#2d3526; --ink:#e3e5d3; --muted:#a9ae96; --line:#3e4835; --rose:#e3a29c; --rose-soft:#4a3532; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--rose);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.mono{font-family:var(--mono)}
+.label{font:500 12px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* header */
+header{padding-block:56px 40px;border-bottom:1px solid var(--line)}
+.hero{display:grid;gap:22px}
+h1{font-size:clamp(44px,8vw,84px);font-weight:800;line-height:.95}
+.role{font:600 18px/1.4 var(--body)}
+.thesis{font:500 clamp(20px,3vw,26px)/1.35 var(--display);max-width:30ch}
+.thesis em{font-style:normal;color:var(--rose)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px;color:var(--muted)}
+.contact{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border:0;border-radius:8px;padding:10px 16px;font:600 15px var(--body);text-decoration:none;cursor:pointer}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.email{font-family:var(--mono);font-size:14px;user-select:all}
+
+/* how I work */
+.method{padding-block:40px;display:grid;gap:18px;border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.step{background:var(--panel);border-radius:10px;padding:16px;display:grid;gap:6px;align-content:start}
+.step b{font:700 17px var(--display)}
+.step span{color:var(--muted);font-size:15px}
+
+/* cases */
+.case{padding-block:56px;border-bottom:1px solid var(--line);display:grid;gap:26px}
+.case-head{display:grid;gap:10px}
+.case-head h2{font-size:clamp(30px,5vw,44px);font-weight:800}
+.case-head .sub{font:500 19px/1.4 var(--display);color:var(--muted);max-width:44ch}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px 32px}
+.story > div{display:grid;gap:8px;align-content:start;min-width:0}
+.story h3{font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--rose)}
+.story ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.big{font:800 clamp(26px,4vw,34px)/1 var(--display);color:var(--rose);font-variant-numeric:tabular-nums}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.stat{background:var(--bg);padding:14px 16px;display:grid;gap:4px}
+.stat .v{font:700 22px var(--display);font-variant-numeric:tabular-nums}
+.stat .k{font-size:13px;color:var(--muted)}
+.stat.flag .v{color:var(--rose)}
+.part{display:grid;gap:18px;padding-top:8px}
+.part + .part{border-top:1px dashed var(--line);padding-top:26px}
+.part > h3{font:700 22px var(--display)}
+
+/* receipts */
+.receipts{display:grid;gap:10px}
+.phones{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,210px));gap:14px}
+figure{margin:0;display:grid;gap:8px;min-width:0}
+figure img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);display:block;background:var(--panel)}
+figcaption{font:400 12px/1.4 var(--mono);color:var(--muted)}
+figcaption b{color:var(--ink);font-weight:500}
+.wide img{border-radius:10px}
+
+/* also + footer */
+.also{padding-block:56px;display:grid;gap:22px;border-bottom:1px solid var(--line)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;align-items:start}
+.two > div{display:grid;gap:12px;min-width:0}
+.list{display:grid;gap:12px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.row span{color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+footer{padding-block:48px 64px;display:grid;gap:14px}
+footer h2{font-size:clamp(28px,5vw,40px)}
+@media (prefers-reduced-motion:no-preference){figure img{transition:transform .2s}figure img:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="hero">
+    <p class="label">Marketing Strategist · Lagos, Nigeria</p>
+    <h1>Rosemary Effiong</h1>
+    <p class="thesis">I find the exact step where attention stops turning into action, <em>and I fix that step.</em></p>
+    <div class="facts">
+      <span class="chip">Marketing Lead, Fourlabs Studio</span>
+      <span class="chip">Founder, Muse Closet</span>
+      <span class="chip">Social strategy, Transform with Tim Nuel</span>
+      <span class="chip">Professional Diploma, Social Media Management &amp; Advertising</span>
+    </div>
+    <div class="contact">
+      <a class="btn" href="https://www.linkedin.com/in/rosemaryeffiong" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="email" id="email">rosemaryyeffiong@gmail.com</span>
+      <button class="btn ghost" id="copy" type="button">Copy email</button>
+    </div>
+  </div>
+</header>
+
+<section class="method" aria-labelledby="how">
+  <h2 id="how" class="label">How I work</h2>
+  <div class="steps">
+    <div class="step"><b>Find the leak</b><span>Read the numbers past the dashboard: where people drop off, what they ask, why they stop.</span></div>
+    <div class="step"><b>Name the cause</b><span>One clear reason, backed by data. "The first two seconds", not "engagement is low".</span></div>
+    <div class="step"><b>Change one thing</b><span>Turn the finding into rules the team can follow on the next post or the next ad.</span></div>
+    <div class="step"><b>Show receipts</b><span>Every claim on this page has the screenshot it came from.</span></div>
+  </div>
+</section>
+
+<!-- TRANSFORM -->
+<article class="case" aria-labelledby="c-transform">
+  <div class="case-head">
+    <p class="label">Content performance · TikTok and Instagram</p>
+    <h2 id="c-transform">Transform with Tim Nuel</h2>
+    <p class="sub">The posts were reaching strangers, then dying on day one with zero new followers. The data showed why.</p>
+    <div class="meta"><span><b>Role</b> Social media strategy and performance</span><span><b>When</b> October 2026 – present</span></div>
+  </div>
+  <div class="story">
+    <div><h3>The problem</h3><p>Transform posts podcast clips about faith and the human experience. Views came from strangers, but reach stopped after day one or two, and the "You &amp; People" series gained 0 followers from 395 viewers.</p></div>
+    <div><h3>What the data said</h3>
+      <ul>
+        <li>Every post lost most viewers by <b>0:02</b>. Platforms test a post on a small batch of strangers, and if they swipe, the push stops.</li>
+        <li>Likes landed at 0:00–0:01. People liked the written headline, then left. The headline worked; the clip's opening didn't.</li>
+        <li>A question aimed at the viewer beat a statement about other people: <b>234 views vs 93</b>, and a <b>12.4% vs 4.3%</b> like rate.</li>
+        <li>99% of TikTok viewers were non-followers, so the engagement hours before and after posting couldn't save a skipped post.</li>
+      </ul>
+    </div>
+    <div><h3>What I changed</h3>
+      <ul>
+        <li>Wrote a 4-page analytics report for the account owner.</li>
+        <li>Set 7 posting rules: open on the strongest spoken line, keep clips to 30–60 s, fill the frame, write question headlines aimed at "you", number the series to give a reason to follow, never replay your own post, and swap engagement time for editing time.</li>
+        <li>Checked episode 3 before it went out. It broke five rules, so I planned a recut into two short clips, each with its own hook.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="receipts">
+    <p class="label">Receipts: before</p>
+    <div class="phones">
+      <figure><img src="img/transform-ep-a-metrics.jpg" alt="TikTok Studio key metrics for episode 1: 234 views, 12.7 s average watch time, 1.86% watched in full" loading="lazy"><figcaption><b>Ep 1: 234 views, 0 follows</b> · TikTok Studio · Nov 16, 2026</figcaption></figure>
+      <figure><img src="img/transform-retention.jpg" alt="TikTok retention for episode 1: viewers watched 10% on average, most stopped at 0:02" loading="lazy"><figcaption><b>Ep 1: 10% watched, drop-off at 0:02</b> · TikTok Studio · Nov 16, 2026</figcaption></figure>
+      <figure><img src="img/transform-ig-skip.jpg" alt="Instagram Reel insights showing a 75.9% skip rate" loading="lazy"><figcaption><b>Skip rate 75.9%</b> · Instagram insights · Nov 16, 2026</figcaption></figure>
+    </div>
+  </div>
+  <div class="part">
+    <h3>The result: the first post cut to the new rules</h3>
+    <p>"They cancelled on you 3 times. So why did you end the friendship?" went out on November 17: 57 seconds, opening on the strongest line, with a question headline aimed at the viewer.</p>
+    <div class="stats" aria-label="Before and after">
+      <div class="stat flag"><span class="v">477</span><span class="k">views (was 234)</span></div>
+      <div class="stat"><span class="v">20%</span><span class="k">of the video watched on average (was 10%)</span></div>
+      <div class="stat"><span class="v">54</span><span class="k">likes (was 29)</span></div>
+      <div class="stat"><span class="v">6 · 4</span><span class="k">comments · saves (was 1 · 3)</span></div>
+      <div class="stat flag"><span class="v">1</span><span class="k">new follower (was 0)</span></div>
+      <div class="stat"><span class="v">+22.2%</span><span class="k">Instagram views, 30 days</span></div>
+    </div>
+    <div class="receipts">
+      <p class="label">Receipts: after</p>
+      <div class="phones">
+        <figure><img src="img/transform-recut-metrics.jpg" alt="TikTok Studio key metrics for the recut: 477 views, 11.2 s average watch, 2.08% watched in full, 1 new follower" loading="lazy"><figcaption><b>Recut: 477 views, 1 follow</b> · TikTok Studio · Nov 23, 2026</figcaption></figure>
+        <figure><img src="img/transform-recut-retention.jpg" alt="TikTok retention for the recut: viewers watched 20% of the video on average" loading="lazy"><figcaption><b>Watched 20% on average</b> · TikTok Studio · Nov 23, 2026</figcaption></figure>
+        <figure><img src="img/transform-ig-30days.jpg" alt="Instagram dashboard: 1,039 views in 30 days, up 22.2%, 111 followers, up 7" loading="lazy"><figcaption><b>Instagram: 1,039 views, +22.2%</b> · Instagram dashboard · Nov 23, 2026</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- MUSE -->
+<article class="case" aria-labelledby="c-muse">
+  <div class="case-head">
+    <p class="label">Paid and organic · Meta Ads, TikTok, WhatsApp</p>
+    <h2 id="c-muse">Muse Closet</h2>
+    <p class="sub">Messages aren't sales. My own fashion brand is where I test, measure and fix the path from ad to order.</p>
+    <div class="meta"><span><b>Role</b> Founder and marketing strategist</span><span><b>When</b> September 2026 – present</span></div>
+  </div>
+
+  <div class="part">
+    <h3>The paid tests: two Meta campaigns, September 2026</h3>
+    <div class="story">
+      <div><h3>Setup</h3><p><b>"Men's interest"</b> (Sep 10–12): men's wear creative, ₦2,000 a day. <b>"Muse Finds"</b> (Sep 14–18): women aged 22+ in Lagos, Abeokuta and Ibadan with fashion and shopping interests, Advantage+ placements, ₦1,800 a day. Its creative was an empty rack, then a hand adding four pieces one by one.</p></div>
+      <div><h3>What the numbers said</h3>
+        <ul>
+          <li>The men's ad started conversations at <b>₦300.57</b> each. Muse Finds cost <b>₦647.44</b>, more than double.</li>
+          <li>Muse Finds was aimed at women, yet <b>45% of its conversations came from men</b>, at ₦700 each, against ₦1,057 from women.</li>
+          <li>Only 22% of plays lasted past 3 seconds on the 20-second Muse Finds video, and the average play was 3 seconds.</li>
+        </ul>
+      </div>
+      <div><h3>What the DMs said</h3>
+        <ul>
+          <li>Most people asked the price and went quiet after the answer. The price wasn't in the ad.</li>
+          <li>One dropped over delivery distance and cost.</li>
+          <li>One thought Muse was a physical market stand.</li>
+          <li>One was pitching their own service.</li>
+        </ul>
+      </div>
+      <div><h3>Diagnosis and next test</h3><p>The ads got attention but didn't qualify anyone. Every missing fact (price, size, online-only, delivery) became a question in the DMs, and each question lost a buyer. And the audience I assumed wasn't the audience that answered. Next test: price and size on screen, "online shop, we deliver" stated plainly, one direct call to action, and men and women as separate ad sets. Success is measured by cost per qualified enquiry and per purchase, not by message count.</p></div>
+    </div>
+    <div class="stats" aria-label="Campaign results">
+      <div class="stat"><span class="v">₦11,029</span><span class="k">total spend, two campaigns</span></div>
+      <div class="stat"><span class="v">24</span><span class="k">conversations</span></div>
+      <div class="stat flag"><span class="v">₦300.57</span><span class="k">per conversation, men's ad</span></div>
+      <div class="stat"><span class="v">₦647.44</span><span class="k">per conversation, Muse Finds</span></div>
+      <div class="stat"><span class="v">22.12%</span><span class="k">hook rate, Muse Finds video</span></div>
+      <div class="stat flag"><span class="v">0</span><span class="k">purchases from the ads</span></div>
+    </div>
+    <div class="receipts">
+      <p class="label">Receipts</p>
+      <figure class="wide"><img src="img/meta-ads-summary.jpg" alt="Meta ads summary: Muse Finds 11 conversations for NGN7,121.83; Men's interest 13 conversations for NGN3,907.35" loading="lazy" style="max-width:640px"><figcaption><b>Both campaigns</b> · Meta Ads summary · Sep 2026</figcaption></figure>
+      <div class="two">
+        <figure class="wide"><img src="img/meta-muse-finds-demo.jpg" alt="Muse Finds results by age and gender: men 45%, women 27%, uncategorised 27%" loading="lazy"><figcaption><b>Muse Finds: 45% men</b> · Ads Manager demographics</figcaption></figure>
+        <figure class="wide"><img src="img/meta-muse-finds-video.jpg" alt="Muse Finds video performance: 3,558 plays, 3 s average play, 22.12% hook rate, 22.51% hold rate" loading="lazy"><figcaption><b>3 s average play</b> · Ads Manager video performance</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="part">
+    <h3>The organic fix: real footage and the right country</h3>
+    <div class="story">
+      <div><h3>Format test</h3><p>Comparing the TikTok grid, real pieces on hangers with real hands averaged about <b>230 views</b>. Posts with AI-generated models averaged about <b>100</b>, and designed covers got 85 and 102. From November 8, every post is real footage, 6–8 seconds, on a white wall.</p></div>
+      <div><h3>Audience shift</h3><p>Muse only delivers in Nigeria, but at the start of November TikTok was showing the posts mostly abroad: <b>15.4% Nigeria</b>, 63.7% Ethiopia. By November 8, a post's viewers were <b>98.4% Nigeria</b>, the only market that can actually buy.</p></div>
+      <div><h3>Fixing the process</h3><p>A personal-shopping customer needed an exchange: one piece was too big, and he hadn't realised the other piece's colour. I swapped it at the market, then changed the process so size and colour are confirmed with the customer before the seller is paid.</p></div>
+    </div>
+    <div class="receipts">
+      <p class="label">Receipts</p>
+      <div class="phones">
+        <figure><img src="img/muse-video-views.jpg" alt="TikTok video list: real hanger videos at 419, 329 and 174 views" loading="lazy"><figcaption><b>Real footage views</b> · TikTok analytics · Nov 5, 2026</figcaption></figure>
+        <figure><img src="img/muse-countries-before.jpg" alt="TikTok top countries before: Ethiopia 63.7%, Nigeria 15.4%" loading="lazy"><figcaption><b>Before: 15.4% Nigeria</b> · TikTok analytics · Nov 5, 2026</figcaption></figure>
+        <figure><img src="img/muse-countries-after.jpg" alt="TikTok post locations after: Nigeria 98.4%" loading="lazy"><figcaption><b>After: 98.4% Nigeria</b> · TikTok Studio · Nov 8, 2026</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- BRANDING CRIB -->
+<article class="case" aria-labelledby="c-crib">
+  <div class="case-head">
+    <p class="label">Audience research and content · Instagram and LinkedIn</p>
+    <h2 id="c-crib">The Branding Crib</h2>
+    <p class="sub">A personal branding and consulting brand. I built personas from audience research, then the content to match them.</p>
+    <div class="meta"><span><b>Role</b> Social media and community management intern</span><span><b>When</b> Aug 2025 – Jan 2026</span></div>
+  </div>
+  <div class="story">
+    <div><h3>What I did</h3>
+      <ul>
+        <li>Researched the audience's age, needs, interests and lifestyle, and built personas from it.</li>
+        <li>Used the personas to pick content direction and formats.</li>
+        <li>Designed carousels and flyers for events and webinars, wrote captions and LinkedIn articles, and handled engagement after each post.</li>
+      </ul>
+    </div>
+    <div><h3>Result, all organic</h3>
+      <p><span class="big">75 → 141</span><br>Instagram followers in four months</p>
+      <p><span class="big">48 → 113</span><br>LinkedIn followers in the same period</p>
+    </div>
+  </div>
+  <div class="stats" aria-label="Instagram results">
+    <div class="stat"><span class="v">17.9k</span><span class="k">impressions</span></div>
+    <div class="stat"><span class="v">6,974</span><span class="k">accounts reached</span></div>
+    <div class="stat"><span class="v">393</span><span class="k">engagements</span></div>
+  </div>
+  <div class="receipts">
+    <p class="label">Receipts</p>
+    <figure class="wide"><img src="img/branding-crib-grid.jpg" alt="Four screenshots of the the_brandingcrib Instagram grid with post view counts" loading="lazy"><figcaption><b>Instagram grid</b> · @the_brandingcrib</figcaption></figure>
+    <figure class="wide"><img src="img/branding-crib-carousels.jpg" alt="Two carousels designed by Rose: a Taylor Swift personal branding lesson and a ChatGPT content prompts series" loading="lazy"><figcaption><b>Carousels I designed</b> · personal branding lessons, content prompts</figcaption></figure>
+    <figure class="wide"><img src="img/branding-crib-article.jpg" alt="LinkedIn article The Real Reason Most Brilliant Founders Stay Invisible, annotated with hook, body and call to action" loading="lazy"><figcaption><b>LinkedIn article I wrote</b> · Dec 10, 2025 · hook, body, call to action</figcaption></figure>
+  </div>
+</article>
+
+<!-- TOUR BUDDY -->
+<article class="case" aria-labelledby="c-tour">
+  <div class="case-head">
+    <p class="label">Community management · Instagram</p>
+    <h2 id="c-tour">Tour Buddy</h2>
+    <p class="sub">A travel community in Enugu running private tours, weekend trips and social events.</p>
+    <div class="meta"><span><b>Role</b> Community manager, commission-based</span><span><b>When</b> October 2025 – January 2026</span></div>
+  </div>
+  <div class="story">
+    <div><h3>What I did</h3><p>Managed comments and DMs, checked them for booking enquiries, supported the content creator so every post matched the brand voice, and wrote captions.</p></div>
+    <div><h3>Result in one month, organic</h3><p><span class="big">605 → 622</span><br>followers, with 11,996 impressions, 1,131 accounts reached and 258 engagements.</p></div>
+  </div>
+  <div class="receipts">
+    <p class="label">Receipts</p>
+    <figure class="wide"><img src="img/tour-buddy-grid.jpg" alt="Three screenshots of the tourbuddyng Instagram grid" loading="lazy"><figcaption><b>Instagram grid</b> · @tourbuddyng</figcaption></figure>
+  </div>
+</article>
+
+<!-- ALSO -->
+<section class="also" aria-labelledby="also">
+  <p class="label">Also</p>
+  <h2 id="also" style="font-size:clamp(28px,5vw,40px)">I design what I market</h2>
+  <div class="two">
+    <div>
+      <p>As Marketing Lead at Fourlabs Studio, I also designed the company's website in Figma from a 9-page UX brief: the homepage, services, template shop and products pages. The CTO built it, and it's live.</p>
+      <p>A marketer who can design the asset doesn't have to wait on a designer to test an idea.</p>
+      <p><a href="https://www.fourlabs.studio/" target="_blank" rel="noopener">Visit fourlabs.studio</a> · <a href="../design/">See my UI/UX portfolio</a></p>
+    </div>
+    <figure class="wide"><img src="img/fourlabs-homepage.jpg" alt="Fourlabs Studio homepage design: dark hero with the line Creative work, done properly and two buttons, Shop Template and Work With Us" loading="lazy"><figcaption><b>Homepage I designed</b> · Figma · now live</figcaption></figure>
+  </div>
+  <div class="two">
+    <div>
+      <p class="label">Strategy concepts</p>
+      <p>Two full strategy decks for fictional brands, built to practise research end to end: <b>LumaGlow</b>, a skincare brand for first-time buyers, and <b>Fit with Alex</b>, a fitness coach. Each covers audience, competitor SWOTs, content pillars and platform plans. Available on request.</p>
+    </div>
+    <div>
+      <p class="label">Certifications</p>
+      <div class="list">
+        <div class="row"><b>Professional Diploma in Social Media Management and Advertising</b><span>Jul 2025</span><span style="grid-column:1/-1">Digital Marketing Skill Institute</span></div>
+        <div class="row"><b>Mastercard Foundation Associates Program: Prep2Soar</b><span>Oct 2026</span></div>
+      </div>
+      <p class="label">Tools</p>
+      <p>Meta Ads Manager · TikTok Studio · Instagram insights · LinkedIn · Canva · Figma · CapCut</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>Let's find your leak.</h2>
+  <p>Open to marketing strategist and social media strategy roles, in Lagos or remote.</p>
+  <div class="contact">
+    <a class="btn" href="https://www.linkedin.com/in/rosemaryeffiong" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="email">rosemaryyeffiong@gmail.com</span>
+  </div>
+</footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var b=this, t=document.getElementById('email').textContent;
+  function sel(){ try{ var r=document.createRange(); r.selectNodeContents(document.getElementById('email')); var s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent='Selected, press Ctrl+C'; }catch(e){} }
+  try{ navigator.clipboard.writeText(t).then(function(){ b.textContent='Copied'; setTimeout(function(){b.textContent='Copy email'},1800); }, sel); }catch(e){ sel(); }
+});
+</script>
+
+</body>
+</html>

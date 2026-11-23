@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Rosemary Effiong, UI/UX designer in Lagos: Fourlabs Studio (live), Aurum, Finnova, Milkshake and Muse Closet.">
+<title>Rosemary Effiong, Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Sister site to the marketing portfolio: same type and rose accent, neutral paper tones so the screens carry the colour.
+   Long page designs sit in scrollable frames, so a reviewer scrolls the real page instead of squinting at a thumbnail. */
+:root{
+  --bg:#f4f2ee; --panel:#e9e6df; --ink:#1d1c1a; --muted:#5f5b54; --line:#d3cec4; --rose:#a8524e; --rose-soft:#efdcd8;
+  --display:"Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "Consolas", monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1a1918; --panel:#252321; --ink:#ebe7e0; --muted:#aaa49a; --line:#3a3733; --rose:#e3a29c; --rose-soft:#46302d; color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1918; --panel:#252321; --ink:#ebe7e0; --muted:#aaa49a; --line:#3a3733; --rose:#e3a29c; --rose-soft:#46302d; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--rose);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.label{font:500 12px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+header{padding-block:56px 40px;border-bottom:1px solid var(--line)}
+.hero{display:grid;gap:22px}
+h1{font-size:clamp(44px,8vw,84px);font-weight:800;line-height:.95}
+.thesis{font:500 clamp(20px,3vw,26px)/1.35 var(--display);max-width:32ch}
+.thesis em{font-style:normal;color:var(--rose)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px;color:var(--muted)}
+.contact{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border:0;border-radius:8px;padding:10px 16px;font:600 15px var(--body);text-decoration:none;cursor:pointer}
+.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.email{font-family:var(--mono);font-size:14px;user-select:all}
+
+/* project index */
+.index{padding-block:36px;border-bottom:1px solid var(--line);display:grid;gap:14px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.card{background:var(--panel);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--ink);display:grid;gap:4px;align-content:start}
+.card b{font:700 18px var(--display)}
+.card span{font-size:14px;color:var(--muted)}
+.card .n{font:500 12px var(--mono);color:var(--rose)}
+.card:hover{outline:1px solid var(--line)}
+
+/* case studies */
+.case{padding-block:60px;border-bottom:1px solid var(--line);display:grid;gap:28px}
+.case-head{display:grid;gap:10px}
+.case-head h2{font-size:clamp(32px,5.5vw,48px);font-weight:800}
+.case-head .sub{font:500 19px/1.4 var(--display);color:var(--muted);max-width:46ch}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:600}
+.tag{display:inline-block;font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:999px;background:var(--rose-soft);color:var(--rose);justify-self:start}
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px 36px}
+.story > div{display:grid;gap:8px;align-content:start;min-width:0}
+h3.k{font:700 13px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--rose)}
+.story ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.decision{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:22px 32px;align-items:start;padding-top:22px;border-top:1px dashed var(--line)}
+.decision .txt{display:grid;gap:8px;align-content:start}
+.decision h3{font:700 21px/1.25 var(--display)}
+.who{font:500 12px var(--mono);color:var(--muted)}
+.who b{color:var(--rose);font-weight:500}
+@media (max-width:720px){.decision{grid-template-columns:1fr}}
+
+figure{margin:0;display:grid;gap:8px;min-width:0}
+figure img,figure video{width:100%;height:auto;display:block;border-radius:10px;border:1px solid var(--line);background:var(--panel)}
+figcaption{font:400 12px/1.4 var(--mono);color:var(--muted)}
+figcaption b{color:var(--ink);font-weight:500}
+.shot{max-height:min(68vh,620px);overflow:auto;border-radius:10px;border:1px solid var(--line);background:var(--panel);overscroll-behavior:contain}
+.shot img{border:0;border-radius:0}
+.phones{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
+.phones img{border-radius:14px}
+.posts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.posts img{border-radius:6px}
+.next{background:var(--panel);border-radius:10px;padding:18px 20px;display:grid;gap:8px}
+.next ul{margin:0;padding-left:18px;display:grid;gap:6px}
+
+footer{padding-block:52px 64px;display:grid;gap:14px}
+footer h2{font-size:clamp(28px,5vw,40px)}
+@media (prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="hero">
+    <p class="label">UI/UX Designer · Lagos, Nigeria</p>
+    <h1>Rosemary Effiong</h1>
+    <p class="thesis">I design screens that answer the user's next question <em>before they have to ask it.</em></p>
+    <div class="facts">
+      <span class="chip">Designed fourlabs.studio (live)</span>
+      <span class="chip">Marketing Lead, Fourlabs Studio</span>
+      <span class="chip">Web, iOS and social design</span>
+      <span class="chip">Figma</span>
+    </div>
+    <div class="contact">
+      <a class="btn" href="../marketing/">Marketing portfolio</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/rosemaryeffiong" target="_blank" rel="noopener">LinkedIn</a>
+      <span class="email" id="email">rosemaryyeffiong@gmail.com</span>
+      <button class="btn ghost" id="copy" type="button">Copy email</button>
+    </div>
+  </div>
+</header>
+
+<nav class="index" aria-labelledby="work">
+  <h2 id="work" class="label">Selected work</h2>
+  <div class="cards">
+    <a class="card" href="#fourlabs"><span class="n">01 · Live client work</span><b>Fourlabs Studio</b><span>Agency site and template shop</span></a>
+    <a class="card" href="#aurum"><span class="n">02 · Personal project</span><b>Aurum</b><span>Menswear store: web and iOS app</span></a>
+    <a class="card" href="#finnova"><span class="n">03 · Personal project</span><b>Finnova</b><span>Fintech website and app onboarding</span></a>
+    <a class="card" href="#milkshake"><span class="n">04 · Prototype</span><b>Milkshake</b><span>Animated flavour menu</span></a>
+    <a class="card" href="#muse"><span class="n">05 · Brand design</span><b>Muse Closet</b><span>Instagram carousels</span></a>
+  </div>
+</nav>
+
+<!-- FOURLABS -->
+<article class="case" id="fourlabs" aria-labelledby="h-fourlabs">
+  <div class="case-head">
+    <span class="tag">Live · fourlabs.studio</span>
+    <h2 id="h-fourlabs">Fourlabs Studio</h2>
+    <p class="sub">Turning a 9-page UX brief into a live site that serves two visitors: the business that wants to hire a studio, and the creator who just wants a template.</p>
+    <div class="meta">
+      <span><b>Role</b> UI/UX designer: wireframes and hi-fi for Home, Services, Shop and Products</span>
+      <span><b>Team</b> Me (design) · Emmanuel Essien, CTO (build) · a teammate designed Contact, About and sign-in</span>
+      <span><b>Timeline</b> 12 January – 12 March, 2 months</span>
+      <span><b>Tool</b> Figma</span>
+    </div>
+    <p><a class="btn" href="https://www.fourlabs.studio/" target="_blank" rel="noopener">Visit the live site</a></p>
+  </div>
+
+  <div class="story">
+    <div><h3 class="k">The brief</h3><p>Fourlabs is a creative studio in Lagos with two businesses under one roof: an agency (branding, content, web, social, paid ads) and a shop of video, image, 3D and audio templates. The brief set the pages, sections, components and a palette, and gave the homepage one goal: <b>"convert users to Shop OR Contact for Services."</b></p></div>
+    <div><h3 class="k">The challenge</h3><p>A founder who wants to hire needs proof and an easy way to start a conversation. A creator who wants a template needs to browse fast and download. One site has to serve both without either feeling like an afterthought.</p></div>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <p class="who">Structure first</p>
+      <h3>Wireframes before colour</h3>
+      <p>I wireframed the three pages that carry the business: Home (two doors, then services, work and a shop band), Shop (search, tabs, a filterable grid) and Services (every service stacked, ending in one contact form). The only question at this stage: can each visitor find their path?</p>
+    </div>
+    <figure><img src="img/fl-00-wireframes.jpg" alt="Grey-box wireframes of the Fourlabs homepage, shop and services pages" loading="lazy"><figcaption><b>Wireframes</b> · Home, Shop, Services</figcaption></figure>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <p class="who">From the brief, <b>made obvious</b></p>
+      <h3>Two doors on the first screen</h3>
+      <p>The brief asked for a primary "Shop Templates" button and a secondary "Work With Us". I put them side by side under one line, "Creative work, done properly." Shop is filled because it's the lower-commitment action; Work With Us is outlined, present but quieter. Each visitor picks a path before they scroll.</p>
+    </div>
+    <figure><div class="shot"><img src="img/fl-01-homepage.jpg" alt="Full Fourlabs homepage design, dark theme, with hero buttons Shop Template and Work With Us" loading="lazy"></div><figcaption><b>Homepage</b> · scroll the full page</figcaption></figure>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <p class="who"><b>My call</b></p>
+      <h3>A quick look at a service, without leaving the page</h3>
+      <p>The brief linked each service card to a detail page. I made the first click open a modal instead: what the service is, what's included, and a "Contact us" button. A visitor can compare three services in ten seconds without losing their place, and the full pages are still one click deeper.</p>
+    </div>
+    <figure><div class="shot"><img src="img/fl-02-service-modal.jpg" alt="Homepage with a service modal open, listing what the service includes and a Contact us button" loading="lazy"></div><figcaption><b>Service modal</b> · Homepage</figcaption></figure>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <p class="who"><b>My call</b></p>
+      <h3>The Services page ends in one form you can tick</h3>
+      <p>Instead of sending people to another page, the Services page ends with "Let's make this work": tick the services you want, add your name and email, send. It matches how Fourlabs sells (one service or a bundle) and removes a page between interest and enquiry.</p>
+    </div>
+    <figure><div class="shot"><img src="img/fl-03-services.jpg" alt="Services page with stacked services ending in a multi-select contact form" loading="lazy"></div><figcaption><b>Services</b> · scroll to the form at the bottom</figcaption></figure>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <p class="who">Built on the brief, <b>plus my layer</b></p>
+      <h3>A shop organised the way creators search</h3>
+      <p>Creators don't search for "a video template". They search for "an After Effects intro". So the Video Template tab drops down by software: After Effects, Premiere Pro, DaVinci Resolve and Apple Motion.</p>
+    </div>
+    <figure><div class="shot"><img src="img/fl-04-shop.jpg" alt="Template shop page with category tabs and a software dropdown" loading="lazy"></div><figcaption><b>Shop</b> · tabs and software dropdown</figcaption></figure>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <p class="who"><b>My call</b></p>
+      <h3>Answer the buyer's questions before the click</h3>
+      <p>The product page became a modal over the grid, so browsing never breaks. It answers three things: what's included (editable scenes, organised layers, HD/4K export), what it's best for (promos, launches, ads), and tags to find similar templates. Then one "Download Template" button.</p>
+    </div>
+    <figure><div class="shot"><img src="img/fl-05-template-modal.jpg" alt="Template detail modal over the shop grid with what's included and a Download Template button" loading="lazy"></div><figcaption><b>Template modal</b> · Shop</figcaption></figure>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <p class="who"><b>Not in the brief</b></p>
+      <h3>A Products page built to grow</h3>
+      <p>The studio was building its own tools, starting with Guidemint, a browser extension. I designed the page as slots: one featured product, then "in development" cards that fill in as each one launches. It never looks empty, and nobody redesigns it every time something ships.</p>
+    </div>
+    <figure><div class="shot"><img src="img/fl-06-products.jpg" alt="Products page with a featured product card and in-development slots" loading="lazy"></div><figcaption><b>Products</b></figcaption></figure>
+  </div>
+
+  <div class="story">
+    <div><h3 class="k">Dark mode, by request</h3><p>The live site has a light and a dark mode. The engineering team asked me to design the dark mode only and built the light mode from it. Inside the dark theme, the red-orange accent appears only on things you can click: buttons, the active menu item, the filter button. If it's orange, it does something.</p></div>
+    <div><h3 class="k">Figma to live</h3><p>Emmanuel Essien, Fourlabs' CTO, built the site straight from my Figma file. There was no export pack: he had direct access, so there was one source of truth and nothing got lost in the hand-over.</p></div>
+  </div>
+
+  <div class="next">
+    <h3 class="k">What I'd add next</h3>
+    <ul>
+      <li><b>Price and licence on every shop card.</b> The brief asked for them; right now you open a template to find out what it costs.</li>
+      <li><b>The full filter panel</b>: format, orientation, duration, price range, sort by popular or new. I designed the Filters button, not the panel behind it.</li>
+      <li><b>Empty states</b>, so a filter that finds nothing says "No results, clear filters" instead of a blank grid.</li>
+    </ul>
+  </div>
+</article>
+
+<!-- AURUM -->
+<article class="case" id="aurum" aria-labelledby="h-aurum">
+  <div class="case-head">
+    <span class="tag">Personal project · E-commerce</span>
+    <h2 id="h-aurum">Aurum</h2>
+    <p class="sub">A menswear store designed three times over, desktop, mobile web and an iOS app, on one black-and-white system so the clothes carry the colour.</p>
+    <div class="meta">
+      <span><b>Role</b> Solo UI/UX design</span>
+      <span><b>Scope</b> About 30 web screens (desktop and mobile) and 14 app screens</span>
+      <span><b>Tool</b> Figma</span>
+    </div>
+  </div>
+
+  <div class="story">
+    <div><h3 class="k">The idea</h3><p>Premium menswear online should feel calm: black, white, a serif wordmark and plenty of space, so the product photos do the selling. The whole journey is designed, not just the homepage: browse, product, cart, shipping, payment, account, FAQ and contact.</p></div>
+    <div><h3 class="k">One system, three sizes</h3><p>The same buttons, product cards, form fields and footer work on desktop, on a phone browser and in the app. A shopper who moves between them never has to relearn the store.</p></div>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <h3>A homepage that sells looks, not just items</h3>
+      <p>The homepage is built around outfits ("Elevate your style", "Look chill", "Look sophisticated", "Empower your look") with new arrivals and accessories under them. Men who don't love shopping get a finished look to copy.</p>
+    </div>
+    <figure><div class="shot"><img src="img/au-home.jpg" alt="Aurum desktop homepage: black and white layout with outfit sections and product grids" loading="lazy"></div><figcaption><b>Desktop homepage</b> · scroll the full page</figcaption></figure>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <h3>The states most mockups skip</h3>
+      <p>Real stores spend most of their time in the awkward moments, so I designed them: an empty bag that points you back to browsing, sign-up errors that sit right under the field that caused them ("Last name is required", the password rule), and a clear payment confirmation.</p>
+    </div>
+    <div class="phones" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+      <figure><img src="img/au-empty.jpg" alt="Empty bag panel with a Continue browsing button" loading="lazy"><figcaption><b>Empty bag</b> · desktop</figcaption></figure>
+      <figure><div class="shot" style="max-height:420px"><img src="img/au-signup.jpg" alt="Sign-up form with inline error messages under the last name and password fields" loading="lazy"></div><figcaption><b>Inline errors</b> · sign up</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <h3>Ask for permission with a reason</h3>
+      <p>The app asks for notifications and location on its own screens first, saying what you get ("updates on new arrivals, exclusive offers and discounts"), with Allow and Deny side by side. People say yes more often when they know why, and the ones who say no aren't pushed.</p>
+    </div>
+    <div class="phones">
+      <figure><img src="img/au-app-5.jpg" alt="App screen: Enable Notification, with the reason and Allow or Deny buttons" loading="lazy"><figcaption><b>Notifications</b></figcaption></figure>
+      <figure><img src="img/au-app-6.jpg" alt="App screen: Enable Location, with the reason and Allow or Deny buttons" loading="lazy"><figcaption><b>Location</b></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <h3>A cart you can fix without starting over</h3>
+      <p>Change quantities in place, swipe an item to remove it, add a discount code, and see the subtotal, discount and total before you commit. Checkout is one action, and success offers "View order" straight away.</p>
+    </div>
+    <div class="phones">
+      <figure><img src="img/au-app-1.jpg" alt="Aurum app welcome screen with Get Started" loading="lazy"><figcaption><b>Welcome</b></figcaption></figure>
+      <figure><img src="img/au-app-7.jpg" alt="App home with search, an offer banner and a product grid" loading="lazy"><figcaption><b>Home</b></figcaption></figure>
+      <figure><img src="img/au-app-10.jpg" alt="Product details with size selector, Add to cart and Buy now" loading="lazy"><figcaption><b>Product</b></figcaption></figure>
+      <figure><img src="img/au-app-11.jpg" alt="Cart with quantity steppers, swipe to delete, discount code and totals" loading="lazy"><figcaption><b>Cart</b></figcaption></figure>
+      <figure><img src="img/au-app-12.jpg" alt="Payment method sheet over the cart" loading="lazy"><figcaption><b>Payment</b></figcaption></figure>
+      <figure><img src="img/au-app-13.jpg" alt="Payment successful screen with View order" loading="lazy"><figcaption><b>Done</b></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="next">
+    <h3 class="k">What I'd add next</h3>
+    <ul>
+      <li><b>A size guide on the product page.</b> In menswear, fit is the first doubt and the first reason for returns.</li>
+      <li><b>A test with five real shoppers</b> on the checkout flow, timing how long it takes and where they hesitate.</li>
+    </ul>
+  </div>
+</article>
+
+<!-- FINNOVA -->
+<article class="case" id="finnova" aria-labelledby="h-finnova">
+  <div class="case-head">
+    <span class="tag">Personal project · Fintech</span>
+    <h2 id="h-finnova">Finnova</h2>
+    <p class="sub">Opening a Nigerian bank account on your phone, one question at a time.</p>
+    <div class="meta">
+      <span><b>Role</b> Solo UI/UX design</span>
+      <span><b>Scope</b> Marketing website (home, FAQ, contact) and 12 app screens: onboarding, verification, dashboard</span>
+      <span><b>Tool</b> Figma</span>
+    </div>
+  </div>
+
+  <div class="story">
+    <div><h3 class="k">The problem</h3><p>Signing up for a bank account asks for a lot: your BVN, your details, your face, your phone number. Put it all on one long form and people quit halfway. And a finance app has to feel safe before anyone types a number into it.</p></div>
+    <div><h3 class="k">The approach</h3><p>Split onboarding into small steps, each asking one thing, in the order a Nigerian user expects from a real bank: BVN, biodata, face check, phone OTP, password. Then a dashboard that puts the balance and the common money moves first.</p></div>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <h3>One task per screen, and a button that tells you when you're ready</h3>
+      <p>Each screen asks one thing. "Next" stays grey until the field is filled, then turns brand green, so you always know whether you can move on. The BVN is masked as you type (26588******), because people notice when an app protects their number.</p>
+    </div>
+    <div class="phones">
+      <figure><img src="img/fn-app-18.jpg" alt="Finnova splash screen with Get Started and Log In" loading="lazy"><figcaption><b>1 · Welcome</b></figcaption></figure>
+      <figure><img src="img/fn-app-19.jpg" alt="BVN screen with an empty field and a grey Next button" loading="lazy"><figcaption><b>2 · BVN, empty</b></figcaption></figure>
+      <figure><img src="img/fn-app-21.jpg" alt="BVN screen with a masked number and a green Next button" loading="lazy"><figcaption><b>3 · BVN, ready</b></figcaption></figure>
+      <figure><img src="img/fn-app-22.jpg" alt="Biodata form, empty, with grey Next" loading="lazy"><figcaption><b>4 · Biodata</b></figcaption></figure>
+      <figure><img src="img/fn-app-24.jpg" alt="Biodata form being filled, with green Next" loading="lazy"><figcaption><b>5 · Biodata, ready</b></figcaption></figure>
+      <figure><img src="img/fn-app-23.jpg" alt="Face verification screen with a face frame" loading="lazy"><figcaption><b>6 · Face check</b></figcaption></figure>
+      <figure><img src="img/fn-app-25.jpg" alt="OTP screen with the phone number to send a code to" loading="lazy"><figcaption><b>7 · Phone</b></figcaption></figure>
+      <figure><img src="img/fn-app-27.jpg" alt="OTP code entered with a Verify button" loading="lazy"><figcaption><b>8 · OTP</b></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <h3>A dashboard in the order people use money</h3>
+      <p>Balance first. Then the three moves people make most: send to a bank, withdraw, add funds. Then bills (electricity, TV), invest and savings. Recent transactions sit underneath, filtered by today, this week or this month.</p>
+    </div>
+    <div class="phones" style="grid-template-columns:minmax(0,260px)">
+      <figure><img src="img/fn-app-17.jpg" alt="Finnova dashboard with balance card, quick actions and recent transactions" loading="lazy"><figcaption><b>Dashboard</b></figcaption></figure>
+    </div>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <h3>A website that earns the download</h3>
+      <p>"Simplify your finances, amplify your life", then the app in a hand, international transfers, a security section, three steps to get started and customer reviews. The FAQ is sorted by topic chips (savings, investment, loans, card, account), so you jump to your question instead of reading them all.</p>
+    </div>
+    <div class="phones" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+      <figure><div class="shot" style="max-height:460px"><img src="img/fn-web.jpg" alt="Finnova website homepage in deep green" loading="lazy"></div><figcaption><b>Homepage</b> · scroll</figcaption></figure>
+      <figure><div class="shot" style="max-height:460px"><img src="img/fn-faq.jpg" alt="Finnova FAQ page with topic chips and expandable questions" loading="lazy"></div><figcaption><b>FAQ</b> · topic chips</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="next">
+    <h3 class="k">What I'd change next</h3>
+    <ul>
+      <li><b>A number pad for the PIN screen</b>, instead of the full keyboard. Fewer taps, fewer mistakes.</li>
+      <li><b>Say why we need the BVN</b>, right under the field: "We use it to confirm it's you. We can't move money with it." That's the question every Nigerian user is silently asking.</li>
+      <li><b>Illustrations in the brand green</b>, so the OTP screens feel like Finnova instead of stock art.</li>
+    </ul>
+  </div>
+</article>
+
+<!-- MILKSHAKE -->
+<article class="case" id="milkshake" aria-labelledby="h-milk">
+  <div class="case-head">
+    <span class="tag">Prototype · Desktop web</span>
+    <h2 id="h-milk">Milkshake</h2>
+    <p class="sub">A landing page where every flavour is on screen at once, and each one gets its own colour.</p>
+    <div class="meta">
+      <span><b>Role</b> UI design and prototyping (solo)</span>
+      <span><b>Tool</b> Figma, Smart Animate</span>
+      <span><b>Type</b> Personal project</span>
+    </div>
+  </div>
+
+  <figure>
+    <video src="img/mk-prototype.mp4" poster="img/mk-28.jpg" controls muted playsinline preload="metadata" aria-label="Screen recording of the milkshake prototype: hovering opens each flavour panel, then the product hero"></video>
+    <figcaption><b>The prototype</b> · Figma screen recording</figcaption>
+  </figure>
+
+  <div class="story">
+    <div><h3 class="k">The idea</h3><p>Milkshake menus usually hide flavours behind a carousel or a long scroll. I wanted every flavour visible at once, so you can compare them at a glance, and still give each one a big moment.</p></div>
+    <div><h3 class="k">What I designed</h3>
+      <ul>
+        <li><b>Flavour menu:</b> four flavours side by side. Hover one and its panel opens in its own colour and photo while the others step back.</li>
+        <li><b>One colour per flavour:</b> Cherry Vanilla soft pink, Apple Caramel burnt orange, Oreo Cheesecake coral, Salted Caramel blush. You know where you are before you read a word.</li>
+        <li><b>Product hero:</b> the glass sits between MILK and SHAKE, overlapping both, so the page has depth instead of a flat banner.</li>
+        <li><b>Motion:</b> Smart Animate slides the panels open and closed instead of jumping between screens.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phones" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">
+    <figure><img src="img/mk-1.jpg" alt="Flavour menu with Cherry Vanilla open in pink" loading="lazy"><figcaption><b>Cherry Vanilla open</b></figcaption></figure>
+    <figure><img src="img/mk-7.jpg" alt="Flavour menu with Apple Caramel open in burnt orange" loading="lazy"><figcaption><b>Apple Caramel open</b></figcaption></figure>
+    <figure><img src="img/mk-13.jpg" alt="Flavour menu with Oreo Cheesecake open in coral" loading="lazy"><figcaption><b>Oreo Cheesecake open</b></figcaption></figure>
+  </div>
+
+  <div class="next">
+    <h3 class="k">What I'd do next</h3>
+    <ul>
+      <li>Make each hero match its flavour, with a switcher for all four.</li>
+      <li>Bigger, clearer "View more" buttons on the darker panels.</li>
+      <li>A mobile version, where the side-by-side menu becomes a stack you tap through.</li>
+    </ul>
+  </div>
+</article>
+
+<!-- MUSE -->
+<article class="case" id="muse" aria-labelledby="h-muse">
+  <div class="case-head">
+    <span class="tag">Brand and social design · My own brand</span>
+    <h2 id="h-muse">Muse Closet</h2>
+    <p class="sub">Instagram carousels for my fashion brand, where the design has one job: teach something in a few swipes, then hand over to the clothes.</p>
+    <div class="meta">
+      <span><b>Role</b> Founder, designer and marketer</span>
+      <span><b>Format</b> 4:5 Instagram carousels</span>
+      <span><b>Tool</b> Figma</span>
+    </div>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <h3>"The problem isn't pink"</h3>
+      <p>One pink top, four pairings. Each slide shows the outfit, its three-colour palette and the moment it's for ("calm days, casual meetings, coffee runs"; "soft enough for church, strong enough for dinner"). The last slide lands the line: pink was never difficult, the pairing changes everything.</p>
+    </div>
+    <div class="posts">
+      <figure><img src="img/muse-136.jpg" alt="Slide 1: The problem isn't pink, with a pink puff-sleeve top" loading="lazy"></figure>
+      <figure><img src="img/muse-137.jpg" alt="Slide 2: pink top with olive skirt and tan heels" loading="lazy"></figure>
+      <figure><img src="img/muse-138.jpg" alt="Slide 3: pink blouse with plum skirt" loading="lazy"></figure>
+      <figure><img src="img/muse-139.jpg" alt="Slide 4: pink top with denim and sneakers" loading="lazy"></figure>
+      <figure><img src="img/muse-140.jpg" alt="Slide 5: pink corset top with cream trousers" loading="lazy"></figure>
+      <figure><img src="img/muse-141.jpg" alt="Slide 6: Pink was never difficult. Choose your comfort style." loading="lazy"></figure>
+    </div>
+  </div>
+
+  <div class="decision">
+    <div class="txt">
+      <h3>"The biggest style mistake"</h3>
+      <p>A hook, then real photos and simple annotations (the glasses, the silver watch, the earth tones) to show that personal style is something you notice in yourself, not something you buy. Real people and real outfits, no stock models.</p>
+      <p><a href="../marketing/#c-muse">How Muse is marketed: see the marketing portfolio</a></p>
+    </div>
+    <div class="posts">
+      <figure><img src="img/muse-149.jpg" alt="Slide: The biggest style Mistake isn't buying the wrong clothes" loading="lazy"></figure>
+      <figure><img src="img/muse-150.jpg" alt="Slide: It's ignoring the things you naturally reach for" loading="lazy"></figure>
+      <figure><img src="img/muse-156.jpg" alt="Slide: Those aren't habits. They're clues, with annotated photos" loading="lazy"></figure>
+      <figure><img src="img/muse-158.jpg" alt="Slide: Personal style isn't created but discovered" loading="lazy"></figure>
+      <figure><img src="img/muse-168.jpg" alt="Slide: Pieces we'd pick for you, collage of a ruffle top outfit" loading="lazy"></figure>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <h2>Let's build something people can actually use.</h2>
+  <p>Open to UI/UX design and marketing roles, in Lagos or remote. A designer who also runs the marketing knows what the screen has to sell.</p>
+  <div class="contact">
+    <a class="btn" href="https://www.linkedin.com/in/rosemaryeffiong" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn ghost" href="../marketing/">Marketing portfolio</a>
+    <span class="email">rosemaryyeffiong@gmail.com</span>
+  </div>
+</footer>
+</div>
+
+<script>
+document.getElementById('copy').addEventListener('click', function(){
+  var b=this, t=document.getElementById('email').textContent;
+  function sel(){ try{ var r=document.createRange(); r.selectNodeContents(document.getElementById('email')); var s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent='Selected, press Ctrl+C'; }catch(e){} }
+  try{ navigator.clipboard.writeText(t).then(function(){ b.textContent='Copied'; setTimeout(function(){b.textContent='Copy email'},1800); }, sel); }catch(e){ sel(); }
+});
+</script>
+
+</body>
+</html>
